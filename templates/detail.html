@@ -35,7 +35,7 @@ plant's name.
     <form action="/harvest/{{plant._id}}" method="POST">
         <fieldset>
             <legend>Harvested:</legend>
-    
+
             <label>
                 Amount harvested
                 <input type="text" name="harvested_amount" placeholder="e.g. 2 tomatoes">
@@ -51,7 +51,7 @@ plant's name.
             </form>
 
     {#
-    TODO: Create a for loop here to loop over all harvests (passed in
+    Create a for loop here to loop over all harvests (passed in
     from the route's context) and display their information.
     #}
     <section id="harvest-history">
@@ -68,7 +68,7 @@ plant's name.
             </ul>
             </section>
 
-    <form action="/delete/123456" method='POST' id="delete-form" onsubmit="return confirm_delete()">
+    <form action="/delete/{{plant._id}}" method='POST' id="delete-form" onsubmit="return confirm_delete()">
         <input type="submit" class="nav" onclick="delete_modal()" value="Delete Plant">
     </form>
 </main>

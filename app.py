@@ -130,11 +130,15 @@ def edit(plant_id):
 
 @app.route('/delete/<plant_id>', methods=['POST'])
 def delete(plant_id):
-    # TODO: Make a `delete_one` database call to delete the plant with the given
+    # Make a `delete_one` database call to delete the plant with the given
     # id.
 
-    # TODO: Also, make a `delete_many` database call to delete all harvests with
+    plants.delete_one({'_id': ObjectId(plant_id)})
+
+    # Also, make a `delete_many` database call to delete all harvests with
     # the given plant id.
+
+    harvests.delete_many({'plant_id': plant_id})
 
     return redirect(url_for('plants_list'))
 
