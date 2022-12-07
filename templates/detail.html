@@ -30,7 +30,7 @@ plant's name.
         <br><br>
 
         <a class="nav" href="/edit/{{plant._id}}">Edit Plant</a><br><br>
-        </section>
+    </section>
 
     <form action="/harvest/{{plant._id}}" method="POST">
         <fieldset>
@@ -47,8 +47,8 @@ plant's name.
             </label>
 
             <input type="submit" class="submit" value="Harvest!">
-            </fieldset>
-            </form>
+        </fieldset>
+        </form>
 
     {#
     Create a for loop here to loop over all harvests (passed in
@@ -65,8 +65,8 @@ plant's name.
             {% else %}
             <li>No harvests yet!</li>
             {% endif %}
-            </ul>
-            </section>
+        </ul>
+        </section>
 
     <form action="/delete/{{plant._id}}" method='POST' id="delete-form" onsubmit="return confirm_delete()">
         <input type="submit" class="nav" onclick="delete_modal()" value="Delete Plant">
